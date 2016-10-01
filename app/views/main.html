@@ -1,0 +1,23 @@
+<header>
+  <h1>{{appStrings[lang].app_name}}</h1>
+  <ul class="bba-languages">
+    <li ng-repeat="lng in appStrings.langs" ng-class="{'active': lang == lng.iso}" switch-lang>{{lng.value}}</li>
+  </ul>
+</header>
+<!----------------------- YEARS LIST SECTION ---------------------->
+<ul class="bba-years-list">
+  <li ng-repeat="year in appStrings.years" ng-class="{'active': activeYear == year.value}" switch-year>
+    {{::year.value}}
+  </li>
+</ul>
+<!--------------------- & YEARS LIST SECTION & -------------------->
+<!-------------------------- WINNERS LIST ------------------------->
+<ul class="bba-winners-list">
+  <li ng-repeat="winner in arrayOfDrivers">
+    <i class="bba-cup" title="{{winner.Driver.givenName}} {{winner.Driver.familyName}}">{{winner.Driver.givenName}} {{winner.Driver.familyName}}</i>
+    <span class="bba-race-name" title="{{winner.raceName}}"><div>{{appStrings[lang].race_nm}}</div><div>{{winner.raceName}}</div></span>
+    <span class="bba-driver-nat" title="{{winner.Driver.nationality}}"><div>{{appStrings[lang].nationality}}</div><div>{{winner.Driver.nationality}}</div></span>
+    <span class="bba-driver-const" title="{{winner.Constructor.name}}"><div>{{appStrings[lang].constructor}}</div><div>{{winner.Constructor.name}}</div></span>
+  </li>
+</ul>
+<!------------------------ & WINNERS LIST & ----------------------->

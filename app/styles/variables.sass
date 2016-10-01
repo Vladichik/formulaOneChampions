@@ -1,0 +1,39 @@
+/****** FONT SIZES *******/
+$main_font_size: 12px
+$titles_font_size: 14px
+$app_name_font_size: 18px
+$drivers_number_font-size: 20px
+/*************************/
+
+/****** APP COLORS *******/
+$main_font_color: #333333
+$separator_color: #d8d8d8
+$app_main_text_clr: #b3404a
+$disabled_text: #aeadad
+$disabled_button: #c9c8c8
+$row_hover: #f2f1f1
+/*************************/
+
+=noUserSelect()
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -o-user-select: none
+  user-select: none
+
+=ellipsis()
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+=transition($attr, $time)
+  will-change: $attr
+  -webkit-transition: $attr $time ease-out
+  -moz-transition: $attr $time ease-out
+  -o-transition: $attr $time ease-out
+  transition: $attr $time ease-out
+
+=shadowGenerator($item)
+  -webkit-box-shadow: $item
+  -moz-box-shadow: $item
+  box-shadow: $item
