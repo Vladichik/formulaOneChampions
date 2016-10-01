@@ -12,7 +12,7 @@
 
 **Few words about the architecture:**
 
-Application consists of a single controller that operates the whole application:<br>
+_Application consists of a single controller that operates the whole application:_<br>
 *Fetching data from the Api, dealing with received data etc.* <br>
 *No routing setup was made because of the application requirements.* <br>
 *Application contains separate strings file that contains all application strings with ability to change languages.*<br>
