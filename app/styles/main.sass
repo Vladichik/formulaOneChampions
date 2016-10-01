@@ -88,7 +88,7 @@ header
       background: $row_hover
     &.active
       background: $row_hover
-      +shadowGenerator(inset 0px 0px 5px 0px rgba(0,0,0,0.35))
+      +shadowGenerator(inset 0px 0px 5px 0px rgba(179, 64, 74,0.85))
 
   &.bba-preloader-waiting li
     opacity: 0.3
@@ -172,9 +172,12 @@ header
     -webkit-transform: rotate(360deg)
 
 
-
-
 @media all and (max-width: 801px)
+  header
+    padding: 0 0 0 80px
+  .bba-years-list
+    li
+      line-height: 45px
   .bba-winners-list
     li
       display: inline-block

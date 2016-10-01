@@ -15,7 +15,7 @@ angular
   ])
   .run(function ($rootScope) {
     /**
-     * Here we initiate application strings and system language
+     * Initiating application strings and system language
      */
     $rootScope.appStrings = APP_STRINGS;
     $rootScope.lang = "en";

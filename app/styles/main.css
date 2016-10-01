@@ -109,9 +109,9 @@ header {
       background: #f2f1f1; }
     .bba-years-list li.active {
       background: #f2f1f1;
-      -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
-      -moz-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
-      box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.35); }
+      -webkit-box-shadow: inset 0px 0px 5px 0px rgba(179, 64, 74, 0.85);
+      -moz-box-shadow: inset 0px 0px 5px 0px rgba(179, 64, 74, 0.85);
+      box-shadow: inset 0px 0px 5px 0px rgba(179, 64, 74, 0.85); }
   .bba-years-list.bba-preloader-waiting li {
     opacity: 0.3;
     pointer-events: none; }
@@ -191,6 +191,12 @@ header {
   to {
     -webkit-transform: rotate(360deg); } }
 @media all and (max-width: 801px) {
+  header {
+    padding: 0 0 0 80px; }
+
+  .bba-years-list li {
+    line-height: 45px; }
+
   .bba-winners-list li {
     display: inline-block;
     width: calc(100% - 10px);

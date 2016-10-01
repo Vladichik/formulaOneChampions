@@ -8,12 +8,12 @@
  * Controller of the fOneChampionsApp
  */
 angular.module('fOneChampionsApp')
-  .controller('MainCtrl', ['$scope', '$rootScope', '$http', '$filter', '$preloader', function ($scope, $rootScope, $http, $filter, $preloader) {
+  .controller('MainCtrl', ['$scope', '$rootScope', '$http', '$filter', '$preloader', '$timeout', function ($scope, $rootScope, $http, $filter, $preloader, $timeout) {
     $scope.activeYear = $rootScope.appStrings.years[0].value;
 
     /**
-     * This $emit listener, fires it receives $emit action
-     * from switchYear directive and then calls fetching method
+     * This $emit listener fires when it receives $emit action
+     * from switchYear directive and then calls for fetching method
      */
     $scope.$on("setActiveYear", function (evt, year) {
       $scope.activeYear = year;
@@ -23,12 +23,13 @@ angular.module('fOneChampionsApp')
 
     /**
      * This method fetches races data for specific year from the server
-     * @param year - String selected year
+     * @param year - (String) selected year
      */
     $scope.fetchResults = function (year) {
       var header = angular.element(".bba-years-list");
       var yearsList = angular.element(".bba-years-list");
       $preloader.addPreloader(header, yearsList);
+
       $http.get("http://ergast.com/api/f1/" + year + "/results.json").then(function success(result) {
         $preloader.removePreloader();
         if (result && !result.data.error) {
@@ -40,14 +41,14 @@ angular.module('fOneChampionsApp')
     };
 
     /**
-     * This method generates array of winners. Map function picks driver that has
+     * This method generates array of winners. Function picks driver that has
      * position = 1 from each race, appends some useful data to this object and then
      * pushes it into the arrayOfWinners
-     * @param races - array of races objects received from the server
+     * @param races - array of races received from the server
      */
     $scope.updateArrayOfDrivers = function (races) {
       $scope.arrayOfDrivers = [];
-      races.map(function (race) {
+      angular.forEach(races, function (race) {
         var winner = $filter("getObject")(race.Results, "position", "1");
         if (winner != null) {
           winner.raceName = race.raceName;
@@ -60,8 +61,7 @@ angular.module('fOneChampionsApp')
     /**
      * This method fetches winners data when application loads
      */
-    $scope.fetchResults($scope.activeYear);
-
+    $timeout(function(){$scope.fetchResults($scope.activeYear)},100);
   }])
   /**
    * This directive listens to
@@ -84,7 +84,7 @@ angular.module('fOneChampionsApp')
     return function(scope, element){
       element.on("click", function () {
         $rootScope.lang = scope.lng.iso;
-        scope.$parent.$parent.$apply();
+        $rootScope.$apply();
       })
     }
   });
