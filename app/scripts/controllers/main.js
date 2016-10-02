@@ -50,7 +50,7 @@ angular.module('fOneChampionsApp')
       $scope.arrayOfDrivers = [];
       angular.forEach(races, function (race) {
         var winner = $filter("getObject")(race.Results, "position", "1");
-        if (winner != null) {
+        if (winner !== null) {
           winner.raceName = race.raceName;
           winner.season = race.season;
           $scope.arrayOfDrivers.push(winner);
@@ -69,7 +69,7 @@ angular.module('fOneChampionsApp')
     /**
      * This method fetches winners data when application loads
      */
-    $timeout(function(){$scope.fetchResults($scope.activeYear)},100);
+    $timeout(function(){$scope.fetchResults($scope.activeYear);},100);
   }])
   /**
    * This directive listens to
@@ -81,9 +81,9 @@ angular.module('fOneChampionsApp')
       link: function (scope, element) {
         element.on("click", function () {
           scope.$emit("setActiveYear", scope.year.value);
-        })
+        });
       }
-    }
+    };
   })
   /**
    * This directive changes current application language
@@ -93,6 +93,7 @@ angular.module('fOneChampionsApp')
       element.on("click", function () {
         $rootScope.lang = scope.lng.iso;
         $rootScope.$apply();
-      })
-    }
+      });
+    };
   });
+
