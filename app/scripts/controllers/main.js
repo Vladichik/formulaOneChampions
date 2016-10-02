@@ -59,6 +59,14 @@ angular.module('fOneChampionsApp')
     };
 
     /**
+     * This method switches view UI layout mode
+     * from regular to column mode
+     */
+    $scope.changeViewLayout = function () {
+      $scope.transformColumn = !$scope.transformColumn;
+    };
+
+    /**
      * This method fetches winners data when application loads
      */
     $timeout(function(){$scope.fetchResults($scope.activeYear)},100);

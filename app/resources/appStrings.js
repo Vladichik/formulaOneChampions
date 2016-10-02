@@ -23,19 +23,22 @@ var APP_STRINGS = {
     app_name: "Formula 1 Diary",
     race_nm: "Race name:",
     nationality: "Nationality:",
-    constructor: "Constructor"
+    constructor: "Constructor",
+    switch_view: "Switch view"
   },
   ru: {
     app_name: "Дневник Формулы 1",
     race_nm: "Название гонки:",
     nationality: "Национальность:",
-    constructor: "Производитель"
+    constructor: "Производитель",
+    switch_view: "Изменить расположение интерфейса"
   },
   de: {
     app_name: "Formel 1 Tagebuch",
     race_nm: "Name des Rennens:",
     nationality: "Staatsangehörigkeit:",
-    constructor: "Constructor"
+    constructor: "Constructor",
+    switch_view: "Ansicht wechseln"
   }
 };
 

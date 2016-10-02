@@ -23,6 +23,7 @@ _Application consists of a single controller that operates the whole application
 *Application contains 3 stylesheet files VARIABLES.SASS for declaring constants and mixins, ICONS.SASS for icons and MAIN.SASS for main stylesheet implementation.* <br>
 *All three above mentioned files are transpiled into MAIN.CSS using Compass.* <br>
 *Both desktop and mobile view were implemented.*
+*Switching view layout implemented.*
 
 
 
